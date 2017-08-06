@@ -1,0 +1,12 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'com.google.cloud.tools.endpoints-framework-client'
+
+dependencies {
+    compile 'com.google.api-client:google-api-client:1.22.0'
+
+    endpointsClient {
+        discoveryDocs = ['src/endpoints/echo-v1-rest.discovery']
+    }
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+}
